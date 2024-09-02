@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 372.21 86.86">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: AgencyFB-Bold, 'Agency FB';
+        font-size: 80.26px;
+        font-weight: 700;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #231f20;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer_1">
+    <rect y="16.88" width="49.69" height="10.55"/>
+    <rect y="37.27" width="49.69" height="10.55"/>
+    <rect y="57.43" width="49.69" height="10.55"/>
+    <rect class="cls-2" x="60" y="16.88" width="19.45" height="10.55"/>
+    <rect class="cls-2" x="60" y="57.43" width="19.45" height="10.55"/>
+    <rect class="cls-2" x="90" y="16.88" width="19.69" height="10.55"/>
+    <rect class="cls-2" x="90" y="57.43" width="19.69" height="10.55"/>
+    <rect class="cls-2" x="60" y="37.27" width="19.45" height="10.31"/>
+    <text class="cls-1" transform="translate(119.71 70.79) scale(1.31 1)"><tspan x="0" y="0">EntityC</tspan></text>
+  </g>
+</svg>
