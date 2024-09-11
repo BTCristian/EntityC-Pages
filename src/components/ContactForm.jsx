@@ -18,6 +18,7 @@ const ContactForm = () => {
                 className="border-2 text-black rounded-lg p-3 flex border-gray-500"
                 type="text"
                 name="name"
+                required
               />
             </div>
             <div className="flex flex-col ">
@@ -26,6 +27,7 @@ const ContactForm = () => {
                 className="border-2 text-black rounded-lg p-3 flex border-gray-500"
                 type="email"
                 name="email"
+                required
               />
             </div>
           </div>
@@ -36,6 +38,7 @@ const ContactForm = () => {
               className="border-2 text-black rounded-lg p-3 flex border-gray-500 "
               type="text"
               name="subject"
+              required
             />
           </div>
           <div className="flex flex-col py2">
@@ -46,6 +49,8 @@ const ContactForm = () => {
               id="message"
               cols="30"
               rows="10"
+              minLength={10}
+              required
             ></textarea>
           </div>
           <button className="bg-red-500 text-gray-100 mt-4 w-full p-4 rounded-lg">
