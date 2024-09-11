@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import InfoBox from "./components/InfoBox";
 import MainContent from "./components/MainContent";
+import GetInTouch from "./components/GetInTouch";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <MainContent />
         <div className="p-2 mb-10">
           <InfoBox />
+          <GetInTouch />
         </div>
       </div>
     </>
