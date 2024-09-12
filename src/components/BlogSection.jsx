@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 const BlogSection = () => {
@@ -9,7 +9,6 @@ const BlogSection = () => {
   useEffect(() => {
     const fetchFeed = async () => {
       try {
-        // Fetch RSS feed
         const response = await axios.get(
           "https://api.allorigins.win/get?url=" +
             encodeURIComponent("https://odysee.com/$/rss/@crypto:d3")
@@ -19,13 +18,23 @@ const BlogSection = () => {
         const items = xml.querySelectorAll("item");
 
         // Map RSS feed items to desired format
-        const postsData = Array.from(items).map((item) => ({
-          title: item.querySelector("title").textContent,
-          link: item.querySelector("link").textContent,
-          description: item.querySelector("description").textContent,
-          thumbnail:
-            item.querySelector("media\\:thumbnail")?.getAttribute("url") || "",
-        }));
+        const postsData = Array.from(items).map((item) => {
+          const title = item.querySelector("title").textContent;
+          const link = item.querySelector("link").textContent;
+          const description = item.querySelector("description").textContent;
+
+          // Extract thumbnail URL from description
+          const descriptionParser = new DOMParser();
+          const descriptionDoc = descriptionParser.parseFromString(
+            description,
+            "text/html"
+          );
+          const img = descriptionDoc.querySelector("img");
+          const thumbnail = img ? img.src : "";
+
+          return { title, link, thumbnail };
+        });
+
         setPosts(postsData);
       } catch (err) {
         setError(err);
@@ -47,24 +56,29 @@ const BlogSection = () => {
     );
 
   return (
-    <section className="p-6 bg-gray-100">
-      <h2 className="text-2xl font-bold mb-6 text-center">Latest Posts</h2>
+    <section className="p-6 bg-black text-white">
+      <h2 className="text-2xl font-bold mt-10 mb-6 text-center">
+        Latest Posts
+      </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {posts.map((post, index) => (
           <article
             key={index}
-            className="bg-white rounded-lg shadow-md overflow-hidden"
+            className="bg-gray-900 rounded-lg shadow-md overflow-hidden"
           >
-            {post.thumbnail && (
+            {post.thumbnail ? (
               <img
                 src={post.thumbnail}
                 alt={post.title}
                 className="w-full h-48 object-cover"
               />
+            ) : (
+              <div className="w-full h-48 bg-gray-200 flex items-center justify-center">
+                <p className="text-gray-500">No Image Available</p>
+              </div>
             )}
             <div className="p-4">
               <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
-              <p className="text-gray-700 text-base mb-4">{post.description}</p>
               <a
                 href={post.link}
                 target="_blank"
