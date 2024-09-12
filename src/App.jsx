@@ -3,6 +3,7 @@ import InfoBox from "./components/InfoBox";
 import MainContent from "./components/MainContent";
 import GetInTouch from "./components/GetInTouch";
 import PartnersSection from "./components/PartnersSection";
+import BlogSection from "./components/BlogSection";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <InfoBox />
           <GetInTouch />
           <PartnersSection />
+          <BlogSection />
         </div>
       </div>
     </>
