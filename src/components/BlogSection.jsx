@@ -56,8 +56,8 @@ const BlogSection = () => {
     );
 
   return (
-    <section className="p-6 bg-black text-white">
-      <h2 className="text-2xl font-bold mt-10 mb-6 text-center">
+    <section className="p-6 bg-black text-white mb-20">
+      <h2 className="text-2xl font-bold mt-10 mb-16 text-center uppercase">
         Latest Posts
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
