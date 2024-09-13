@@ -1,14 +1,17 @@
-import { useEffect } from "react";
-import "../css/LogoAnimation.css";
+import { useEffect, useRef } from "react";
+import "../css/LogoCensusAnimation.css";
 
-const LogoAnimation = () => {
+const LogoCensusAnimation = () => {
+  const text1Ref = useRef(null);
+  const text2Ref = useRef(null);
+
   useEffect(() => {
     const elts = {
-      text1: document.getElementById("text1"),
-      text2: document.getElementById("text2"),
+      text1: text1Ref.current,
+      text2: text2Ref.current,
     };
 
-    const texts = ["□▣▭◫▣", "EntityC"];
+    const texts = ["□▭▫▱▫", "ensus"];
 
     const morphTime = 1.5; // seconds
     const cooldownTime = 0.2; // seconds
@@ -81,8 +84,8 @@ const LogoAnimation = () => {
 
   return (
     <div id="container" className="flex items-center justify-center">
-      <span id="text1"></span>
-      <span id="text2"></span>
+      <span className="text1" id="text1" ref={text1Ref}></span>
+      <span id="text2" ref={text2Ref}></span>
       <svg id="filters">
         <defs>
           <filter id="threshold">
@@ -101,4 +104,4 @@ const LogoAnimation = () => {
   );
 };
 
-export default LogoAnimation;
+export default LogoCensusAnimation;

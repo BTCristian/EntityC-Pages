@@ -1,7 +1,7 @@
 import { useState } from "react";
-import LogoAnimation from "./LogoAnimation";
+import LogoCodeAnimation from "./LogoCodeAnimation";
 
-const LogoEntityC = () => {
+const LogoCode = () => {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -20,12 +20,14 @@ const LogoEntityC = () => {
             <defs>
               <style>{`
             .cls-1 { fill: #fff; }
+            .cls-2 { fill: red; }
+            
           `}</style>
             </defs>
             <g>
               <rect className="cls-1" width="49.69" height="10.55" />
-              <rect className="cls-1" y="20.39" width="49.69" height="10.55" />
-              <rect className="cls-1" y="40.55" width="49.69" height="10.55" />
+              <rect className="cls-2" y="20.39" width="49.69" height="10.55" />
+              <rect className="cls-2" y="40.55" width="49.69" height="10.55" />
               <rect className="cls-1" x="60" width="19.45" height="10.55" />
               <rect
                 className="cls-1"
@@ -54,12 +56,12 @@ const LogoEntityC = () => {
         </div>
       </div>
       {hovered && (
-        <div className="flex top-0 left-1/3  md:left-0">
-          <LogoAnimation />
+        <div className="flex top-0 left-1/3  md:left-0 ">
+          <LogoCodeAnimation />
         </div>
       )}
     </div>
   );
 };
 
-export default LogoEntityC;
+export default LogoCode;
