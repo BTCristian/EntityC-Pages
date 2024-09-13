@@ -11,7 +11,7 @@ function App() {
       <div className="min-h-screen bg-black flex flex-col top-0">
         <Header />
         <MainContent />
-        <div className="p-2 mb-2">
+        <div className="p-3 mb-2">
           <InfoBox />
           <GetInTouch />
           <PartnersSection />

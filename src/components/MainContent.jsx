@@ -4,7 +4,7 @@ import aoLogo from "../assets/AoLogoDark.svg";
 
 const MainContent = () => {
   return (
-    <div className="text-white mt-32 px-4 ">
+    <div className="text-white mt-32 px-4 relative">
       <div className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl leading-none">
         <div>Building bridges</div>
         <div>
@@ -21,6 +21,18 @@ const MainContent = () => {
           AO native
           <span className="border-b-4 border-red-500 inline-block w-16 sm:w-24"></span>
         </p>
+      </div>
+
+      {/* Hidden link */}
+      <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out">
+        <a
+          href="/mission" // Replace with the actual URL
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-red-500 text-white py-2 px-4 rounded shadow-lg hover:bg-red-700 transition-colors duration-300"
+        >
+          Read more about our mission
+        </a>
       </div>
     </div>
   );
