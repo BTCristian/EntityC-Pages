@@ -1,12 +1,16 @@
-import React from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import logoWtext from "../assets/EntityC with text Dark.svg";
 
 const ContactForm = () => {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top-left corner
+  }, []);
+
   const handleBackClick = () => {
-    navigate("/"); // Navigate back to the home page or any specific page
+    navigate("/");
   };
 
   return (

@@ -6,48 +6,65 @@ const BlogSection = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchFeed = async () => {
-      try {
-        const response = await axios.get(
-          "https://api.allorigins.win/get?url=" +
-            encodeURIComponent(import.meta.env.VITE_APP_BLOG_CHANNEL_URL)
+  const MAX_RETRIES = 3; // Maximum number of retries
+  const RETRY_DELAY = 2000; // Delay between retries in milliseconds
+
+  const fetchFeed = async (retryCount = 0) => {
+    try {
+      const response = await axios.get(
+        "https://api.allorigins.win/get?url=" +
+          encodeURIComponent(import.meta.env.VITE_APP_BLOG_CHANNEL_URL)
+      );
+      const parser = new DOMParser();
+      const xml = parser.parseFromString(response.data.contents, "text/xml");
+      const items = xml.querySelectorAll("item");
+
+      // Map RSS feed items to desired format
+      const postsData = Array.from(items).map((item) => {
+        const title = item.querySelector("title").textContent;
+        const link = item.querySelector("link").textContent;
+        const description = item.querySelector("description").textContent;
+
+        // Extract thumbnail URL from description
+        const descriptionParser = new DOMParser();
+        const descriptionDoc = descriptionParser.parseFromString(
+          description,
+          "text/html"
         );
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(response.data.contents, "text/xml");
-        const items = xml.querySelectorAll("item");
+        const img = descriptionDoc.querySelector("img");
+        const thumbnail = img ? img.src : "";
 
-        // Map RSS feed items to desired format
-        const postsData = Array.from(items).map((item) => {
-          const title = item.querySelector("title").textContent;
-          const link = item.querySelector("link").textContent;
-          const description = item.querySelector("description").textContent;
+        return { title, link, thumbnail };
+      });
 
-          // Extract thumbnail URL from description
-          const descriptionParser = new DOMParser();
-          const descriptionDoc = descriptionParser.parseFromString(
-            description,
-            "text/html"
-          );
-          const img = descriptionDoc.querySelector("img");
-          const thumbnail = img ? img.src : "";
-
-          return { title, link, thumbnail };
-        });
-
+      // Check if postsData is empty, if so, retry
+      if (postsData.length === 0 && retryCount < MAX_RETRIES) {
+        setTimeout(() => fetchFeed(retryCount + 1), RETRY_DELAY);
+      } else {
         setPosts(postsData);
-      } catch (err) {
-        setError(err);
-      } finally {
         setLoading(false);
       }
-    };
+    } catch (err) {
+      if (retryCount < MAX_RETRIES) {
+        setTimeout(() => fetchFeed(retryCount + 1), RETRY_DELAY);
+      } else {
+        setError(err);
+        setLoading(false);
+      }
+    }
+  };
 
+  useEffect(() => {
     fetchFeed();
   }, []);
 
   if (loading)
-    return <p className="text-center text-lg font-medium">Loading...</p>;
+    return (
+      <div className="flex items-center justify-center h-64">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-slate-200"></div>
+      </div>
+    );
+
   if (error)
     return (
       <p className="text-center text-lg font-medium text-red-500">
