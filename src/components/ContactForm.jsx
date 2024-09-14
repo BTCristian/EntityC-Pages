@@ -1,9 +1,26 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import logoWtext from "../assets/EntityC with text Dark.svg";
 
 const ContactForm = () => {
+  const navigate = useNavigate();
+
+  const handleBackClick = () => {
+    navigate("/"); // Navigate back to the home page or any specific page
+  };
+
   return (
     <div className="flex flex-col top-0 bg-black text-white min-h-screen">
+      {/* Back Button */}
+      <div className="p-4">
+        <button
+          onClick={handleBackClick}
+          className="text-white bg-red-600 px-4 py-2 rounded-md hover:bg-red-700 focus:outline-none"
+          aria-label="Go back to home page"
+        >
+          Back
+        </button>
+      </div>
       <div className="grid justify-items-center">
         <div className="md:w-1/4 w-1/2 ml-8 md:ml-32 pt-2 top-0">
           <img src={logoWtext} alt="Logo Entity C" />
@@ -21,7 +38,7 @@ const ContactForm = () => {
           Contact
         </h1>
         <form
-          action="https://getform.io/f/apjmeqka"
+          action={import.meta.env.VITE_APP_FORM_ACTION_URL}
           method="POST"
           encType="multipart/form-data"
           aria-labelledby="contact-form-title"

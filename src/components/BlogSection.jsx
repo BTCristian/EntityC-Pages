@@ -11,7 +11,7 @@ const BlogSection = () => {
       try {
         const response = await axios.get(
           "https://api.allorigins.win/get?url=" +
-            encodeURIComponent("https://odysee.com/$/rss/@crypto:d3")
+            encodeURIComponent(import.meta.env.VITE_APP_BLOG_CHANNEL_URL)
         );
         const parser = new DOMParser();
         const xml = parser.parseFromString(response.data.contents, "text/xml");

@@ -10,7 +10,7 @@ const MainContent = () => {
         <div>
           between <span className="text-red-500">blockchain</span> and
         </div>
-        <div>the trad world.</div>
+        <div>the trade world.</div>
       </div>
 
       <div className="flex flex-row mt-8 text-xl sm:text-2xl md:text-3xl">

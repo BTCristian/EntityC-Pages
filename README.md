@@ -121,3 +121,64 @@ or
 ```
 yarn dev
 ```
+
+## Environment Variables:
+
+Create ".env" file in the root directory of the app "./" and define variables for rss feed channel and form service as below:
+
+```
+VITE_APP_FORM_ACTION_URL="https://getform.io/your_getform_url"
+VITE_APP_BLOG_CHANNEL_URL="https://odysee.com/$/rss/@your-channel"
+```
+
+### Important!
+
+Don't forget to add exception in your .gitignore file:
+
+```
+#Environment variables
+.env
+*.env
+*.vars
+!.env.example
+```
+
+\*replace "your_getform_url" and "@your-channel" with actual values
+
+## Project Deployment
+
+### Cloudflare Pages:
+
+Create an account on Clouflare - https://cloudflare.com
+
+Integrate git repo - https://developers.cloudflare.com/pages/get-started/git-integration
+
+### Pages Project Settings:
+
+#### Environment variables
+
+Production variables should be defined/set accordingly with the .env variables, in our case
+
+```
+Variable name:  VITE_APP_FORM_ACTION_URL
+Value:          https://getform.io/your_getform_url
+
+Variable name:  VITE_APP_BLOG_CHANNEL_URL
+Value:          https://odysee.com/$/rss/@your-channel
+```
+
+#### Builds & deployments
+
+For the framework we will select "None" as Vite Build is not available
+Build command:
+
+```
+npm run build
+```
+
+Build output directory
+/
+
+```
+dist
+```
