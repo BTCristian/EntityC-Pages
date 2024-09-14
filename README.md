@@ -128,7 +128,7 @@ Create ".env" file in the root directory of the app "./" and define variables fo
 
 ```
 VITE_APP_FORM_ACTION_URL="https://getform.io/your_getform_url"
-VITE_APP_BLOG_CHANNEL_URL="https://odysee.com/$/rss/@your-channel"
+VITE_APP_RSS_CHANNEL_URL="https://odysee.com/$/rss/@your-channel"
 ```
 
 #### Important!
@@ -163,13 +163,13 @@ Production variables should be defined/set accordingly with the .env variables, 
 Variable name:  VITE_APP_FORM_ACTION_URL
 Value:          https://getform.io/your_getform_url
 
-Variable name:  VITE_APP_BLOG_CHANNEL_URL
+Variable name:  VITE_APP_RSS_CHANNEL_URL
 Value:          https://odysee.com/$/rss/@your-channel
 ```
 
 #### Builds & deployments
 
-For the framework we will select "None" as Vite Build is not available
+For the framework select "None" as Vite Build is not available
 Build command:
 
 ```
