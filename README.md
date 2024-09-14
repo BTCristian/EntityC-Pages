@@ -110,7 +110,7 @@ The directives are used to include the respective parts of Tailwind CSS in your 
 
 "App.css" file has been removed as it was not required any more.
 
-## To run the project:
+### To run the project:
 
 ```
 npm run dev
@@ -122,7 +122,7 @@ or
 yarn dev
 ```
 
-## Environment Variables:
+### Environment Variables:
 
 Create ".env" file in the root directory of the app "./" and define variables for rss feed channel and form service as below:
 
@@ -131,7 +131,7 @@ VITE_APP_FORM_ACTION_URL="https://getform.io/your_getform_url"
 VITE_APP_BLOG_CHANNEL_URL="https://odysee.com/$/rss/@your-channel"
 ```
 
-### Important!
+#### Important!
 
 Don't forget to add exception in your .gitignore file:
 
