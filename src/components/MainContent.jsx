@@ -26,7 +26,7 @@ const MainContent = () => {
       {/* Hidden link */}
       <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out">
         <a
-          href="/mission" // Replace with the actual URL
+          href={import.meta.env.VITE_APP_OUR_MISSION_URL} // Replace with the actual URL
           target="_blank"
           rel="noopener noreferrer"
           className="bg-red-500 text-white py-2 px-4 rounded shadow-lg hover:bg-red-700 transition-colors duration-300"

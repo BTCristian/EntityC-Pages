@@ -5,7 +5,6 @@ export default {
     extend: {
       fontFamily: {
         cutmark: ["Cutmark Narrow", "sans-serif"],
-        "no-exit": ["No Exit", "sans-serif"],
       },
     },
   },

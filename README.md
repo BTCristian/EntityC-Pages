@@ -1,4 +1,4 @@
-#Project Documentation
+# Project Documentation
 
 ## 1. Project Overview
 
@@ -165,12 +165,30 @@ Value:          https://getform.io/your_getform_url
 
 Variable name:  VITE_APP_RSS_CHANNEL_URL
 Value:          https://odysee.com/$/rss/@your-channel
+
+Variable name:  VITE_APP_CENSUS_PAGES_URL
+Value:          https://your-census-pages-url
+
+Variable name:  VITE_APP_CODE_PAGES_URL
+Value:          https://your-code-pages-url
+
+Variable name:  VITE_APP_BLOG_URL
+Value:          https://your-blog-url
+
+Variable name:  VITE_APP_X_URL
+Value:          https://your-twitter/x-url
+
+Variable name:  VITE_APP_DISCORD_HUB_URL
+Value:          https://your-discord-research-hub-url
+
+Variable name:  VITE_APP_OUR_MISSION_URL
+Value:          https://your-our-mission-url
 ```
 
 #### Builds & deployments
 
 For the framework select "None" as Vite Build is not available
-Build command:
+Build command
 
 ```
 npm run build
@@ -181,4 +199,13 @@ Build output directory
 
 ```
 dist
+```
+
+### Important! Root directory must be set as below
+
+Root directory
+/
+
+```
+./
 ```

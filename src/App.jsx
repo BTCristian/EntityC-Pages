@@ -4,6 +4,7 @@ import MainContent from "./components/MainContent";
 import GetInTouch from "./components/GetInTouch";
 import PartnersSection from "./components/PartnersSection";
 import BlogSection from "./components/BlogSection";
+import CoreTeam from "./components/CoreTeam";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <PartnersSection />
           <BlogSection />
         </div>
+        <CoreTeam />
       </div>
     </>
   );

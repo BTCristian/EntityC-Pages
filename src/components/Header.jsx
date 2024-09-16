@@ -17,7 +17,7 @@ const Header = () => {
           </a>
 
           <a
-            href="#Census"
+            href={import.meta.env.VITE_APP_CENSUS_PAGES_URL}
             // target="_blank" // Enable open in new tab
             rel="noopener noreferrer"
             className="text-white flex w-1/5 md:mr-64 "
@@ -25,7 +25,7 @@ const Header = () => {
             <LogoCensus />
           </a>
           <a
-            href="#Census"
+            href={import.meta.env.VITE_APP_CODE_PAGES_URL}
             // target="_blank" // Enable open in new tab
             rel="noopener noreferrer"
             className="text-white flex w-1/5 "
@@ -40,13 +40,13 @@ const Header = () => {
         </div>
       </header>
       <div className="text-right text-white md:text-2xl text-sm font-no-exit ">
-        <a href="#Blog">
+        <a href={import.meta.env.VITE_APP_BLOG_URL}>
           <span className="md:mr-20 mr-10 hover:text-red-500">Blog</span>
         </a>
-        <a href="#">
+        <a href={import.meta.env.VITE_APP_X_URL}>
           <span className="md:mr-20 mr-10 hover:text-red-500">Twitter/X</span>
         </a>
-        <a href="#">
+        <a href={import.meta.env.VITE_APP_DISCORD_HUB_URL}>
           <span className="md:mr-20 mr-10 hover:text-red-500">
             Discord-Research Hub
           </span>
