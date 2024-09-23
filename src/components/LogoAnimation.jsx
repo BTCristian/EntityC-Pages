@@ -80,7 +80,10 @@ const LogoAnimation = () => {
   }, []);
 
   return (
-    <div id="container" className="flex items-center justify-center">
+    <div
+      id="container"
+      className="flex items-center justify-center 2xl:-mt-0 xl:-mt-6 lg:-mt-5 md:-mt-4 -mt-2.5"
+    >
       <span id="text1"></span>
       <span id="text2"></span>
       <svg id="filters">

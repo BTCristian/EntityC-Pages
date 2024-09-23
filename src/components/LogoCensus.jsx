@@ -6,7 +6,7 @@ const LogoCensus = () => {
 
   return (
     <div
-      className="flex items-center justify-center w-1/2 md:w-1/4 mx-auto"
+      className="flex items-center justify-center"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -56,7 +56,7 @@ const LogoCensus = () => {
         </div>
       </div>
       {hovered && (
-        <div className="flex top-0 left-1/3  md:left-0 ">
+        <div className="2xl:mb-0 xl:-mb-0.5 lg:-mb-1 md:-mb-0.5 -mb-0">
           <LogoCensusAnimation />
         </div>
       )}

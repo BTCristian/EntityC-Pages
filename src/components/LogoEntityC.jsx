@@ -6,7 +6,7 @@ const LogoEntityC = () => {
 
   return (
     <div
-      className="flex items-center justify-center w-1/2 md:w-1/4 mx-auto"
+      className="flex items-center justify-center"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -54,7 +54,7 @@ const LogoEntityC = () => {
         </div>
       </div>
       {hovered && (
-        <div className="flex top-0 left-1/3  md:left-0">
+        <div className="2xl:mb-0 xl:-mb-12 lg:-mb-10 md:-mb-8 -mb-5 ">
           <LogoAnimation />
         </div>
       )}
