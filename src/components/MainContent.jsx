@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import arweaveLogo from "../assets/ArweaveLogoDark.svg";
 import aoLogo from "../assets/AoLogoDark.svg";
 
 const MainContent = () => {
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
+  const toggleCollapse = () => {
+    setIsCollapsed(!isCollapsed);
+  };
+
   return (
     <div className="text-white mt-32 px-4 relative">
       <div className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl leading-none">
@@ -24,15 +30,27 @@ const MainContent = () => {
       </div>
 
       {/* Hidden link */}
-      <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out">
-        <a
-          href={import.meta.env.VITE_APP_OUR_MISSION_URL} // Replace with the actual URL
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-red-500 text-white py-2 px-4 rounded shadow-lg hover:bg-red-700 transition-colors duration-300"
-        >
-          Read more about our mission
-        </a>
+      <div
+        className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out"
+        onClick={toggleCollapse}
+      >
+        <div className="bg-red-500 text-white py-2 px-4 rounded shadow-lg hover:bg-red-700 transition-colors duration-300 cursor-pointer">
+          {isCollapsed ? "Hide details" : "Read more about our mission"}
+        </div>
+      </div>
+      <div
+        className={`mt-10 transition-all duration-300 ease-in-out ${
+          isCollapsed ? "max-h-screen" : "max-h-0 overflow-hidden"
+        }`}
+      >
+        <div className="bg-black p-4 text-xl leading-8">
+          <p>
+            This is more detailed content about our mission, explaining how we
+            aim to build bridges between blockchain and the traditional world.
+            Our mission is to make the technology accessible, understandable,
+            and integrated into industries where it can provide real value.
+          </p>
+        </div>
       </div>
     </div>
   );
