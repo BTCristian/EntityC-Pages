@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Layer_2" viewBox="0 0 373.58 86.86">
+  <defs fill="#fffffff">
+    <style>
+      .cls-1, .cls-2 {
+        fill: #ffffff;
+      }
+
+      .cls-2 {
+        font-family: AgencyFB-Bold, 'Agency FB';
+        font-size: 80.26px;
+        font-weight: 700;
+        
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer_1">
+    <rect class="cls-1" y="16.67" width="49.69" height="10.55" fill="#fffffff"/>
+    <rect class="cls-1" y="37.06" width="49.69" height="10.55" fill="#fffffff"/>
+    <rect class="cls-1" y="57.22" width="49.69" height="10.55" fill="#fffffff"/>
+    <rect class="cls-1" x="60" y="16.67" width="19.45" height="10.55" fill="#fffffff"/>
+    <rect class="cls-1" x="60" y="57.22" width="19.45" height="10.55" fill="#fffffff"/>
+    <rect class="cls-1" x="90" y="16.67" width="19.69" height="10.55" fill="#fffffff"/>
+    <rect class="cls-1" x="90" y="57.22" width="19.69" height="10.55" fill="#fffffff"/>
+    <rect class="cls-1" x="60" y="37.06" width="19.45" height="10.31" fill="#fffffff"/>
+    <text class="cls-2" transform="translate(115.08 60.79) scale(0.7 0.7)" fill="#fffffff"><tspan x="0" y="0" fill="#fffffff">EntityC</tspan></text>
+  </g>
+</svg>
